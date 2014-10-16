@@ -14,6 +14,7 @@
 		90FDFD2819EF19B300A40A4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90FDFD2719EF19B300A40A4F /* Images.xcassets */; };
 		90FDFD2B19EF19B300A40A4F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90FDFD2919EF19B300A40A4F /* LaunchScreen.xib */; };
 		90FDFD3719EF19B400A40A4F /* TLSimonSaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FDFD3619EF19B400A40A4F /* TLSimonSaysTests.m */; };
+		90FDFD4219EF1E2500A40A4F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FDFD4119EF1E2500A40A4F /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		90FDFD3019EF19B400A40A4F /* TLSimonSaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLSimonSaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90FDFD3519EF19B400A40A4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90FDFD3619EF19B400A40A4F /* TLSimonSaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLSimonSaysTests.m; sourceTree = "<group>"; };
+		90FDFD4019EF1E2500A40A4F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		90FDFD4119EF1E2500A40A4F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				90FDFD2119EF19B300A40A4F /* ViewController.h */,
 				90FDFD2219EF19B300A40A4F /* ViewController.m */,
 				90FDFD2419EF19B300A40A4F /* Main.storyboard */,
+				90FDFD4019EF1E2500A40A4F /* Player.h */,
+				90FDFD4119EF1E2500A40A4F /* Player.m */,
 				90FDFD2719EF19B300A40A4F /* Images.xcassets */,
 				90FDFD2919EF19B300A40A4F /* LaunchScreen.xib */,
 				90FDFD1A19EF19B300A40A4F /* Supporting Files */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90FDFD4219EF1E2500A40A4F /* Player.m in Sources */,
 				90FDFD2319EF19B300A40A4F /* ViewController.m in Sources */,
 				90FDFD2019EF19B300A40A4F /* AppDelegate.m in Sources */,
 				90FDFD1D19EF19B300A40A4F /* main.m in Sources */,
@@ -412,6 +418,7 @@
 				90FDFD3C19EF19B400A40A4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90FDFD3D19EF19B400A40A4F /* Build configuration list for PBXNativeTarget "TLSimonSaysTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				90FDFD3F19EF19B400A40A4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
