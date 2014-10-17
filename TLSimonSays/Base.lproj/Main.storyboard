@@ -70,9 +70,17 @@
                                     <action selector="redButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Nhp-bt-qMf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqf-CV-Mat">
+                                <rect key="frame" x="110" y="20" width="101" height="21"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hqf-CV-Mat" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="94" id="0hP-2w-37H"/>
                             <constraint firstItem="V1u-48-Prz" firstAttribute="top" secondItem="ADb-hW-FgG" secondAttribute="bottom" id="39T-c7-kqG"/>
                             <constraint firstItem="lSq-fN-8xh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="3J8-gw-9yh"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kd1-5l-rQL" secondAttribute="bottom" constant="20" id="4cs-Ri-TwN"/>
@@ -84,6 +92,7 @@
                             <constraint firstItem="V1u-48-Prz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="W0D-na-9Xf"/>
                             <constraint firstItem="Kd1-5l-rQL" firstAttribute="top" secondItem="V1u-48-Prz" secondAttribute="bottom" constant="29" id="WOV-i2-rkc"/>
                             <constraint firstItem="lSq-fN-8xh" firstAttribute="width" secondItem="ADb-hW-FgG" secondAttribute="width" id="YP4-JP-Tgs"/>
+                            <constraint firstItem="hqf-CV-Mat" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Zgk-JM-h6z"/>
                             <constraint firstAttribute="centerX" secondItem="Kd1-5l-rQL" secondAttribute="centerX" id="bKh-yZ-RID"/>
                             <constraint firstItem="lSq-fN-8xh" firstAttribute="width" secondItem="V1u-48-Prz" secondAttribute="width" id="eOp-ta-beO"/>
                             <constraint firstItem="lSq-fN-8xh" firstAttribute="width" secondItem="NMC-O4-a9M" secondAttribute="width" id="lNb-7I-Ryy"/>
@@ -94,6 +103,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="NMC-O4-a9M" secondAttribute="trailing" id="uUn-wf-rSk"/>
                             <constraint firstItem="lSq-fN-8xh" firstAttribute="height" secondItem="V1u-48-Prz" secondAttribute="height" id="vjq-3u-8ZE"/>
                             <constraint firstItem="lSq-fN-8xh" firstAttribute="height" secondItem="NMC-O4-a9M" secondAttribute="height" id="xck-c5-HWG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hqf-CV-Mat" secondAttribute="trailing" constant="93" id="z0R-Wt-ubd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -101,6 +111,7 @@
                         <outlet property="greenButton" destination="lSq-fN-8xh" id="JkV-Pu-7xk"/>
                         <outlet property="orangeButton" destination="NMC-O4-a9M" id="uND-qg-AXv"/>
                         <outlet property="redButton" destination="V1u-48-Prz" id="0Yf-vQ-z8m"/>
+                        <outlet property="scoreLabel" destination="hqf-CV-Mat" id="JSd-23-Cy5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

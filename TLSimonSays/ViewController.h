@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *blueButton;
 @property (strong, nonatomic) IBOutlet UIButton *redButton;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 
 
 - (IBAction)greenButtonPressed:(UIButton *)sender;

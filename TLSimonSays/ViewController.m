@@ -36,6 +36,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)generatePatternArray {
+    
+    int index = self.roundNumber;
+    int randomindex = 0;
+    NSMutableArray *newPattern = [[NSMutableArray alloc]init];
+    
+    while (index > 0) {
+        
+        randomindex = [self getRandomNumberBetween:0 to:(int)(self.colors.count-1)];
+        [newPattern addObject:[self.colors objectAtIndex:randomindex]];
+        
+        index--;
+    }
+    
+    self.pattern = newPattern;
+    
+}
+
+
+#pragma mark - IBActions
+
 - (IBAction)greenButtonPressed:(UIButton *)sender {
     
     [self buttonPressed:sender];
@@ -88,6 +109,8 @@
     
 }
 
+
+
 -(void)userDone {
     if(self.currentPress == self.roundNumber){
         //users done
@@ -95,13 +118,13 @@
         //NSLog(@"%@", correct);
         if(correct){
             [self userCorrect];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.roundNumber];
         }
         
         else {
             
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score: 0"];
             [self flashAllButtonsWithRepeats:3];
-            
-            
  
 
         }
@@ -109,6 +132,8 @@
     }
     
 }
+
+#pragma mark - Animation methods
 
 -(void)flashAllButtonsWithRepeats:(int)repeat {
     
@@ -218,6 +243,36 @@
     
 }
 
+-(void)animatePatternWithArray:(NSMutableArray *) pattern {
+    
+    if (pattern.count < 1){
+        return;
+    }
+    
+    UIButton *button = [pattern firstObject];
+    //[pattern removeObject:button];
+    [pattern removeObjectAtIndex:0];
+    
+    [UIView animateWithDuration: 0.5
+                          delay: 0.0
+                        options: UIViewAnimationOptionTransitionCrossDissolve  | UIViewAnimationCurveEaseInOut
+                     animations:^{
+                         button.alpha = 1;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                         button.alpha = 0.5;
+                         [self animatePatternWithArray:pattern];
+                         
+                     }];
+    
+    
+    
+    
+}
+
+#pragma mark - game updates
+
 -(void) resetGame {
     
     self.roundNumber = 1;
@@ -252,9 +307,6 @@
             
             if([self.pattern objectAtIndex:i]!=[self.userInputs objectAtIndex:i]){
                 
-               // NSLog(@"%@", [self.pattern objectAtIndex:i]);
-                //NSLog(@"%@", [self.userInputs objectAtIndex:i]);
-                
                 return NO;
             }
         }
@@ -264,52 +316,8 @@
     return YES;
 }
 
--(void)generatePatternArray {
-    
-    int index = self.roundNumber;
-    int randomindex = 0;
-    NSMutableArray *newPattern = [[NSMutableArray alloc]init];
-    
-    while (index > 0) {
-        
-        randomindex = [self getRandomNumberBetween:0 to:(int)(self.colors.count-1)];
-        [newPattern addObject:[self.colors objectAtIndex:randomindex]];
-        
-        index--;
-    }
-    
-    self.pattern = newPattern;
-    
-}
 
 
--(void)animatePatternWithArray:(NSMutableArray *) pattern {
-    
-    if (pattern.count < 1){
-        return;
-    }
-    
-    UIButton *button = [pattern firstObject];
-    //[pattern removeObject:button];
-    [pattern removeObjectAtIndex:0];
-    
-    [UIView animateWithDuration: 0.5
-                          delay: 0.0
-                        options: UIViewAnimationOptionTransitionCrossDissolve  | UIViewAnimationCurveEaseInOut | UIViewAnimationOptionAutoreverse
-                     animations:^{
-                         button.alpha = 1;
-                     }
-                     completion:^(BOOL finished) {
-                         
-                         button.alpha = 0.5;
-                         [self animatePatternWithArray:pattern];
-                         
-                     }];
-
-    
-    
-    
-}
 
 #pragma mark - alert View delegate methods
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
